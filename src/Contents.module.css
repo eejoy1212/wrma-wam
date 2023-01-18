@@ -1,0 +1,205 @@
+.Contents {
+  background: #202020;
+  width: 100%;
+  height: 96%;
+}
+
+.bgCard {
+
+  background-color: #2a2a2a;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.orScrollZone {
+  width: 100%;
+  /* background: red; */
+  /* overflow: scroll; */
+  /* overflow: hidden; */
+  overflow: scroll;
+  position: relative;
+  overflow-x: scroll;
+overflow-y: hidden;
+/*
+scroll-snap-type: x mandatory;
+scroll-behavior: smooth; */
+  /* scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  display: flex; */
+
+}
+
+.orScrollZone::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+.orScrollZone::-webkit-scrollbar-thumb {
+  background-color: #404040;
+  border-radius: 14px;
+/* height: 10px; */
+  /* height: 10px; */
+
+}
+
+.orScrollZone::-webkit-scrollbar-track {
+  background-color: #2a2a2a;
+  /*스크롤바 트랙 색상*/
+}
+
+.details {
+  box-sizing: border-box;
+  width: 50%;
+  /* padding: 10px; */
+  /* background: #000; */
+  border-bottom: 2px solid #696969;
+}
+
+.topZone {
+  display: flex;
+}
+
+.bigTitle {
+  /* width: 100%; */
+  font-size: 1rem;
+  font-weight: 400;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  /* background-color: teal; */
+  /* align-items: center; */
+  /* flex-direction: row; */
+}
+
+.bigTitle>input {
+  color: white;
+  width: 250px;
+  padding: 4px;
+  border-radius: 14px;
+  /* height:20px; */
+  /* height: 34px; */
+  margin-left: 10px;
+  background-color: #454647;
+  border: none;
+
+}
+.bigTitle>input::-webkit-search-cancel-button{
+  background-color: white;
+  color: white;
+}
+
+.bottomZone {
+  display: flex;
+  width: 100%;
+  height: 81%;
+  /* background: red; */
+}
+
+.charts {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  /* background-color: green; */
+}
+
+.applyBtn {
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 4px 20px;
+  letter-spacing: 2px;
+  background-color: #484848;
+  border: none;
+  color: white;
+  border-radius: 14px;
+
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+  padding-left: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 10px;
+}
+
+.eyeIcon {
+  width: 24px;
+  height: 24px;
+  background-image: url(./svg/Eye.svg);
+}
+
+.idx {
+  display: flex;
+  font-size: 14px;
+  /* background: #000; */
+  white-space: nowrap;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.idxTitle {
+  font-size: 12px;
+  color: #d2d2d2;
+}
+
+.colorChip {
+  /* margin-left: 10px;
+  margin-top: 10px; */
+  width: 12px;
+  height: 12px;
+  background: orange;
+  border-radius: 50%;
+  /* margin-right: 10px; */
+}
+
+.filePath {
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.plotZone {
+  width: 111px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background: #000; */
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.plotZone>input {
+  color: white;
+  width: 26px;
+  background-color: #454647;
+  height: 16px;
+  border: 1px solid white;
+}
+
+.lineChart {
+  width: 100%;
+  height: 100%;
+  /* background: #000; */
+}
+.maxLayout{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+}
+.plots{
+  width: 100%;
+  display: flex;
+  /* background-color: aqua; */
+}

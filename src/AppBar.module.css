@@ -1,0 +1,49 @@
+.AppBar{
+  background: #202020;
+  width: 100%;
+  height:4%;
+  display: flex;
+  align-items: center;
+
+}
+.logo{
+  /* 10px ===0.625rem*/
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+.logBar{
+  /* 기본 폰트사이즈 14px ===0.875rem*/
+  font-size: 0.875rem;
+  /* 364px===22.75rem */
+  width: 22.75rem;
+ 
+  background-color: #2D2D2D;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+  display: flex;
+}
+.bellIcon{
+  width: 20px;
+  height:20px;
+  background-image: url(./svg/notification_important.svg);
+}
+.txt{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 364px;
+}
+.bigTitle{
+  font-size: 1rem;
+  font-weight: bold;
+}
+/* .bigTitle input[type=text]{
+  margin-left: 20px;
+} */
+.orViDetails{
+  display: flex;
+  flex-direction: column;
+}
