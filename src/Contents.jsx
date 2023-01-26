@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import styles from "./Contents.module.css";
-import { Chart, plugins, registerables } from "chart.js";
+import { Chart,registerables } from "chart.js";
 import { Line } from "react-chartjs-2";
 import {
   IoCalculatorSharp,
@@ -11,24 +11,10 @@ import {
 import { RiFileUploadFill } from "react-icons/ri";
 import { MdOutlineFilePresent } from "react-icons/md";
 import { FiMaximize2, FiMinimize2 } from "react-icons/fi";
-// import 'jquery/dist/jquery.js';
-// import $ from 'jquery';
-// import 'ion-rangeslider/css/ion.rangeSlider.min.css';
-// import 'ion-rangeslider/js/ion.rangeSlider.min.js';
-// import* as Slider from "./slider.js";
-import { IonRange } from "@ionic/react";
-// import Slider from 'react-rangeslider'
-// $(".js-range-slider").ionRangeSlider();
-// To include the default styles
-// import 'react-rangeslider/lib/index.css'
-// import IonRangeSlider from 'react-ion-slider'
-// import $ from 'jquery';
-// import { StreamingPlugin, RealTimeScale } from 'chartjs-plugin-streaming';
 import { Range, getTrackBackground } from "react-range";
-// import { resolve } from 'chart.js/dist/helpers/helpers.options';
+import { OrModel} from './model/OrModel';
 Chart.register(...registerables);
-
-// (".js-range-slider").ionRangeSlider();
+//모델로 옮길거
 export default function Contents(props) {
   let chartReference = React.createRef();
   function openAttachment() {
@@ -36,7 +22,6 @@ export default function Contents(props) {
   }
 
   async function fileSelected(input) {
-    // console.log(input.files);
     const files=input.target.files;
     for (let index = 0; index < files.length; index++) {
 
@@ -52,29 +37,21 @@ setSelectedFiles([...selectedFiles,file.name]);
         });
   
       let csvText = await readFile(file);
-      // console.log(csvText);
+      console.log(csvText);
     }
     console.log(selectedFiles);
    
   }
 
-  // var custom_values = [0, 10, 100, 1000, 10000, 100000, 1000000];
   const STEP = 0.1;
   const MIN = 0;
   const MAX = 100;
-  // // be careful! FROM and TO should be index of values array
-  // var my_from = custom_values.indexOf(10);
-  // var my_to = custom_values.indexOf(10000);
   const [values, setValues] = useState([25, 75]);
   const [isMaxLeft, setIsMaxLeft] = useState(false);
   const [isMaxRight, setIsMaxRight] = useState(false);
   const [isOrPopup, setIsOrPopup] = useState(false);
   const [selectedFiles, setSelectedFiles] = useState([]);
-
   const [isFileListPopup, setIsFileListPopup] = useState(false);
-  // const [isOrPopup, setIsOrPopup] = useState(false);
-  // const [isOrPopup, setIsOrPopup] = useState(false);
-  // const [isOrPopup, setIsOrPopup] = useState(false);
   const [searchedOrVi, setSearchedOrVi] = useState("");
   const [searchedFileName, setSearchedFileName] = useState("");
   const [xDatas, setXdatas] = useState([1, 4, 6, 7, 8, 9, 10]);
@@ -129,7 +106,10 @@ setSelectedFiles([...selectedFiles,file.name]);
     chart.data.datasets[0].data = [1];
     chart.update();
   }
+  // const orCardsModels=new Or();
+  // console.log(orCardsModels);
   const orCards = [
+    
     { name: "OR 1", start: "500", end: "700" },
     { name: "OR 2", start: "500", end: "700" },
     { name: "OR 3", start: "500", end: "700" },
@@ -146,6 +126,7 @@ setSelectedFiles([...selectedFiles,file.name]);
     { name: "OR 14", start: "500", end: "700" },
     { name: "OR 15", start: "500", end: "700" },
   ];
+
   const fileCards = [
     { fileName: "파일임", value: "200" },
     { fileName: "파일임2", value: "20430" },
@@ -672,7 +653,7 @@ setSelectedFiles([...selectedFiles,file.name]);
               <ul className="cards">
                 {searchedOrVi === ""
                   ? orCards.map((card, index) => (
-                      <li>
+                      <li key={index}>
                         <div className={styles.cardTitle}>
                           {card.name}
                           <div className="spacer"></div>
@@ -702,7 +683,7 @@ setSelectedFiles([...selectedFiles,file.name]);
                           card.end.includes(searchedOrVi)
                       )
                       .map((card, index) => (
-                        <li>
+                        <li key={index}>
                           <div className={styles.cardTitle}>
                             {card.name}
                             <div className="spacer"></div>
@@ -746,7 +727,7 @@ setSelectedFiles([...selectedFiles,file.name]);
               <ul className="cards">
                 {searchedFileName === ""
                   ? fileCards.map((card, index) => (
-                      <li>
+                      <li key={index}>
                         <div className={styles.cardTitle}>
                           <div className={styles.colorChip}></div>
                           <div className="spacer"></div>
@@ -774,7 +755,7 @@ setSelectedFiles([...selectedFiles,file.name]);
                           card.value.includes(searchedFileName)
                       )
                       .map((card, index) => (
-                        <li>
+                        <li key={index}>
                           <div className={styles.cardTitle}>
                             <div className={styles.colorChip}></div>
                             <div className="spacer"></div>
